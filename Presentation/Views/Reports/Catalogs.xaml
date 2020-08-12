@@ -1,0 +1,58 @@
+﻿<Window x:Class="Presentation.Views.Reports.Catalogs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Catalogs" Height="400" Width="600" FontSize="20" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg"/>
+        </Grid.Background>
+        <Label x:Name="TitleLabel" Content="Catalogs" Margin="5"
+    		Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontSize="30"/>
+        <Border Margin="10"
+        	BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+        	CornerRadius="10" Background="{DynamicResource HeaderBkgBrush}" Grid.Row="1" Grid.Column="0">
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="233*" />
+                    <ColumnDefinition Width="121*" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*" />
+                    <RowDefinition Height="0.15*" />
+                    <RowDefinition Height="0.15*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" x:Name="TyreLabel" Content="Tyres Catalog"
+        			Margin="5" Foreground="White" VerticalContentAlignment="Center" />
+                <Label x:Name="BatteryLabel" Content="Batteries Catalog" Margin="5"
+        			Grid.Row="1" Grid.Column="0"
+        			Foreground="White" VerticalContentAlignment="Center" />
+                <Label x:Name="AlloyWheelLabel" Content="Alloy Wheels Catalog" Margin="5"
+                	Grid.Column="0"
+                	Foreground="White" Grid.Row="2" VerticalContentAlignment="Center" />
+                <Button x:Name="TyreButton" Content="View" Margin="15" Grid.Row="0" Grid.Column="1" Background="{DynamicResource AuthenticationWindowBkgBrush}" Foreground="White" Click="TyreButton_Click" BorderThickness="0" VerticalContentAlignment="Center"/>
+                <Button x:Name="BatteryButton" Content="View" Margin="15" Grid.Column="1" Grid.Row="1" Background="{DynamicResource AuthenticationWindowBkgBrush}" Foreground="White" Click="BatteryButton_Click" BorderThickness="0" VerticalContentAlignment="Center"/>
+                <Button x:Name="AlloyWheelButton" Content="View" Margin="15" Grid.Column="1" Grid.Row="2" Background="{DynamicResource AuthenticationWindowBkgBrush}" Foreground="White" Click="AlloyWheelButton_Click" BorderThickness="0" VerticalContentAlignment="Center"/>
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="5" Grid.Row="2" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Background="{DynamicResource HeaderBrush}">
+            <Button x:Name="CancelButton" Content="OK" Margin="0" Foreground="White" Background="{x:Null}" Click="CancelButton_Click" IsCancel="True"/>
+        </Border>
+        <Image x:Name="LogoImage" Source="/Presentation;component/Resources/Header.png"
+        	Opacity="0.8" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+        	UseLayoutRounding="False" Stretch="UniformToFill" Margin="0" Grid.Row="0" Grid.Column="1" />
+
+    </Grid>
+</Window>

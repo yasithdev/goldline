@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{A8DB7142-7476-4C86-B946-AA5F0B2C7433}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51437C20-F358-4405-9876-DD657D2F749F} = {51437C20-F358-4405-9876-DD657D2F749F}
+	EndProjectSection
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UseCaseModeling", "UseCaseModeling\UseCaseModeling.modelproj", "{94AA2C27-5CA5-416A-B441-96A86BADAB72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{51437C20-F358-4405-9876-DD657D2F749F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{608F0E36-D62F-4DB8-AE15-37E0FAF42F50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTest", "UnitTest\CoreTest.csproj", "{D9E9F636-7D53-4948-B251-E8B50C71C214}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8DB7142-7476-4C86-B946-AA5F0B2C7433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DB7142-7476-4C86-B946-AA5F0B2C7433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DB7142-7476-4C86-B946-AA5F0B2C7433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DB7142-7476-4C86-B946-AA5F0B2C7433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94AA2C27-5CA5-416A-B441-96A86BADAB72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AA2C27-5CA5-416A-B441-96A86BADAB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AA2C27-5CA5-416A-B441-96A86BADAB72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51437C20-F358-4405-9876-DD657D2F749F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51437C20-F358-4405-9876-DD657D2F749F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51437C20-F358-4405-9876-DD657D2F749F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51437C20-F358-4405-9876-DD657D2F749F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{608F0E36-D62F-4DB8-AE15-37E0FAF42F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{608F0E36-D62F-4DB8-AE15-37E0FAF42F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{608F0E36-D62F-4DB8-AE15-37E0FAF42F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{608F0E36-D62F-4DB8-AE15-37E0FAF42F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E9F636-7D53-4948-B251-E8B50C71C214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E9F636-7D53-4948-B251-E8B50C71C214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E9F636-7D53-4948-B251-E8B50C71C214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E9F636-7D53-4948-B251-E8B50C71C214}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://grydtech.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Core\\Core.csproj
+		SccProjectName1 = Core
+		SccLocalPath1 = Core
+		SccProjectUniqueName2 = DataLayer\\DataLayer.csproj
+		SccProjectName2 = DataLayer
+		SccLocalPath2 = DataLayer
+		SccProjectUniqueName3 = Presentation\\Presentation.csproj
+		SccProjectName3 = Presentation
+		SccLocalPath3 = Presentation
+		SccProjectUniqueName4 = UseCaseModeling\\UseCaseModeling.modelproj
+		SccProjectName4 = UseCaseModeling
+		SccLocalPath4 = UseCaseModeling
+		SccProjectUniqueName5 = UnitTest\\CoreTest.csproj
+		SccProjectName5 = UnitTest
+		SccLocalPath5 = UnitTest
+	EndGlobalSection
+EndGlobal

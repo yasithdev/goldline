@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="8bd91ff0-e3bf-4fa2-a4f9-3f9c7d86fc80" name="Record Defective Item" linkedPackageId="8088ef2c-54c5-43a8-a925-ebfcff84aa4e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="55ec90d4-0a7f-40eb-8422-1fe1c6d85b2c" name="Record Defective Item" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="0a868e1b-b64c-4c51-a25f-b275eb94ad10" />
+        <nodes>
+          <initialNode Id="6e8b3d24-357b-4141-8073-e1db23a755e9" name="Initial1" isLeaf="false">
+            <elementDefinition Id="6237c26a-5c20-4e89-ad49-8d1c6f56b61f" />
+            <flowNodeTargets>
+              <controlFlow Id="99aa5687-e6a9-45fb-a33a-bb3fbabbb3f6" isLeaf="false">
+                <opaqueActionMoniker Id="124fcade-07ab-4e0c-883d-08c62ca62e2c" LastKnownName="record defective item" />
+                <elementDefinition Id="3fd72570-7f17-4282-8ea4-df5307117794" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="124fcade-07ab-4e0c-883d-08c62ca62e2c" name="record defective item" isLeaf="false">
+            <elementDefinition Id="30a5e57f-812d-4f47-a686-5cfb93b83ee2" />
+            <flowNodeTargets>
+              <controlFlow Id="6596356a-b71f-457d-a1c5-818ac8b5384b" isLeaf="false">
+                <opaqueActionMoniker Id="451afd15-7939-4915-826b-2ef90bb80ca8" LastKnownName="enter defective item details" />
+                <elementDefinition Id="226f6040-2ef6-412a-9aed-cfcfe7990c31" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="451afd15-7939-4915-826b-2ef90bb80ca8" name="enter defective item details" isLeaf="false">
+            <elementDefinition Id="1c283c8f-d9c0-44a9-917d-56db6f8f63e6" />
+            <flowNodeTargets>
+              <controlFlow Id="02254b7e-bf2e-4cbb-9bce-8fdf1e2f4546" isLeaf="false">
+                <opaqueActionMoniker Id="c92be36b-174e-4111-a5cb-5762b3502941" LastKnownName="Save defective item" />
+                <elementDefinition Id="ebd4c867-c360-448f-9c52-c48d2afbf664" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4ddcfa83-0e9a-41b8-b0f8-ed47383cecbf" name="add item to defective items list" isLeaf="false">
+            <elementDefinition Id="84669df5-e406-40fd-ad84-7b40d38e83f1" />
+            <flowNodeTargets>
+              <controlFlow Id="e3b4ee8d-6322-48e8-83a3-0689e9043896" isLeaf="false">
+                <opaqueActionMoniker Id="797b6872-25b4-45cf-b73a-69abb25193f0" LastKnownName="issue a replacement" />
+                <elementDefinition Id="2a8733e8-9ff7-4854-8b2b-cb7be304a5fc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c92be36b-174e-4111-a5cb-5762b3502941" name="Save defective item" isLeaf="false">
+            <elementDefinition Id="a5ba0f5f-fc0c-49bd-a967-9149f608673a" />
+            <flowNodeTargets>
+              <controlFlow Id="68fa50db-3619-4a42-b703-fe748db8c249" isLeaf="false">
+                <opaqueActionMoniker Id="4ddcfa83-0e9a-41b8-b0f8-ed47383cecbf" LastKnownName="add item to defective items list" />
+                <elementDefinition Id="777d650f-7df5-4fb6-8878-fbaaa16cfd5f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="797b6872-25b4-45cf-b73a-69abb25193f0" name="issue a replacement" isLeaf="false">
+            <elementDefinition Id="9a2ee7c7-07c0-4c93-98d0-ca125f45aaf4" />
+            <flowNodeTargets>
+              <controlFlow Id="10afbce0-c410-4ed0-ad0c-d5873c84a7a5" isLeaf="false">
+                <opaqueActionMoniker Id="cd376e6b-6833-4f0a-81a8-9650fb71cec5" LastKnownName="update stocks accordingly" />
+                <elementDefinition Id="4840576b-aae0-45a5-9772-589cd7880913" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="cd376e6b-6833-4f0a-81a8-9650fb71cec5" name="update stocks accordingly" isLeaf="false">
+            <elementDefinition Id="be4bbec7-b2e4-4295-b864-a6ea899e5c28" />
+            <flowNodeTargets>
+              <controlFlow Id="3db87797-89aa-414a-8797-35b9b1f6688b" isLeaf="false">
+                <activityFinalNodeMoniker Id="61cb95c2-e81a-4f21-b7a6-98cd1d21ccaf" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="33dd5602-288b-46e9-99c7-18a0b5c8c2ee" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="61cb95c2-e81a-4f21-b7a6-98cd1d21ccaf" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="503ba5de-36fc-4f84-a2db-f446eb2a7cb5" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="8088ef2c-54c5-43a8-a925-ebfcff84aa4e" name="UseCaseModeling">
+    <elementDefinition Id="b15daa4c-d792-40ef-b4a0-1754e21277fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e594457b-48f7-444b-9645-8b6ed24f5719">
+        <profileInstance Id="ec22e2bf-332e-4532-a8b0-f78b213b96c2" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0e8b1c0f-c258-43f8-834c-e88b705bd97f">
+        <profileInstance Id="cb5033e8-5da1-49b8-bef0-f9e4245679f4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

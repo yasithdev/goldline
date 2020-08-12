@@ -1,0 +1,299 @@
+﻿<Window x:Class="Presentation.Views.Supplies.SupplyOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:Presentation.Views"
+        xmlns:presentation="clr-namespace:Presentation"
+        mc:Ignorable="d"
+        Title="Supply Order Window" Height="576" Width="1024"
+        WindowStartupLocation="CenterScreen" Visibility="Visible" MinWidth="1024"
+        MinHeight="576" SnapsToDevicePixels="True" WindowState="Maximized" FontSize="14"
+        PreviewKeyDown="SupplyOrderWindow_OnPreviewKeyDown">
+    <Window.Background>
+        <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg" Stretch="UniformToFill" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="86*" />
+            <RowDefinition Height="274*" />
+            <RowDefinition Height="11*" />
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="57" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="499*" />
+            <ColumnDefinition Width="21*" />
+            <ColumnDefinition Width="346*" />
+            <ColumnDefinition Width="150*" />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="TitleLabel" Content="Supply Order" Margin="5,5,5,16" VerticalContentAlignment="Center"
+               Foreground="#CCFFFFFF" FontSize="30" Grid.ColumnSpan="4" d:LayoutOverrides="VerticalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin" />
+        <Grid Margin="10,0,-2,0" Grid.Row="1" Grid.Column="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="93*" />
+                <ColumnDefinition Width="171*" />
+                <ColumnDefinition Width="62*" />
+                <ColumnDefinition Width="139*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*" />
+                <RowDefinition Height="29" />
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="26*" />
+                <RowDefinition Height="196*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+                    CornerRadius="10" Background="{DynamicResource HeaderBkgBrush}" Grid.Row="3"
+                    d:LayoutOverrides="LeftMargin, RightMargin" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="2">
+                <DataGrid x:Name="InventoryDataGrid"
+                          Background="{x:Null}" Opacity="0.8" AutoGenerateColumns="False"
+                          AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+                          HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+                          IsReadOnly="True" Margin="5,5,5,5" BorderThickness="0"
+                          SelectionChanged="InventoryDataGrid_SelectionChanged" IsTextSearchEnabled="True"
+                          BorderBrush="{x:Null}">
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                                         Color="LightCyan" />
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Width="0.05*" Binding="{Binding Id}" />
+                        <DataGridTextColumn Header="Name" Width="0.55*" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Price" Width="0.3*" Binding="{Binding Price}" />
+                        <DataGridTextColumn Header="Stock" Width="0.1*" Binding="{Binding Stock}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Border Grid.Row="0" Margin="0,1,1,0" Background="{DynamicResource HeaderBkgBrush}"
+                    BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="10"
+                    Grid.ColumnSpan="4" d:LayoutOverrides="LeftMargin, RightMargin" Grid.RowSpan="3">
+                <ComboBox x:Name="SearchComboBox" Margin="94,9,0,9" BorderBrush="{x:Null}"
+                          SelectedIndex="0" Foreground="#FF060000" FontSize="16"
+                          TabIndex="1" Opacity="0.8" SelectionChanged="SearchComboBox_SelectionChanged"
+                          d:LayoutOverrides="VerticalAlignment" IsEditable="True" HorizontalAlignment="Left"
+                          Width="165" DisplayMemberPath="Name" IsTabStop="False" RenderTransformOrigin="0.497,0.481" />
+            </Border>
+            <Label x:Name="SupplierNameLabel" Content="Supplier:" Margin="10,-5,0,0.437"
+                   Foreground="#FFF9F1F1" FontSize="16" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin" Grid.RowSpan="2" />
+            <TextBox x:Name="SearchTextBox" TextWrapping="Wrap" Text="Enter Item Name here.."
+                     Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Margin="10,0"
+                     BorderThickness="0" Opacity="0.8"
+                     GotFocus="TextBox_OnFocusChanged" LostFocus="TextBox_OnFocusChanged"
+                     CaretBrush="{DynamicResource LightBorderBrush}"
+                     SelectionBrush="{DynamicResource LightBorderBrush}" TextChanged="SearchTextBox_TextChanged"
+                     FontSize="16" TabIndex="2" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin" Grid.RowSpan="2" />
+        </Grid>
+        <Image x:Name="LogoImage" Source="/Presentation;component/Resources/Header.png" Grid.Row="0"
+               Opacity="0.8" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+               UseLayoutRounding="False" Stretch="UniformToFill"
+               Margin="0,0,0,10.5" Grid.Column="3" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin" />
+        <Border Background="{DynamicResource HeaderBkgBrush}"
+                BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="10,0,0,10" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin" Grid.Row="3"
+                Margin="10,0,0,0" Grid.RowSpan="2">
+            <Grid Margin="0" Opacity="0.8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid Margin="0,0,0,10" Grid.Row="1" d:LayoutOverrides="VerticalAlignment">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="52*" />
+                        <ColumnDefinition Width="69*"/>
+                        <ColumnDefinition Width="66*" />
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="58*"/>
+                        <ColumnDefinition Width="134*"/>
+                        <ColumnDefinition Width="86*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="45" />
+                        <RowDefinition Height="139"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="NameLabel" Content="Name:" Margin="-1,10,5,-2.002" Foreground="White" Grid.Row="0"
+                           Grid.Column="1" d:LayoutOverrides="LeftMargin, RightMargin" />
+                    <TextBox x:Name="NameTextBox" Margin="5,10,0,10" TextWrapping="Wrap"
+                             Text="{Binding SelectedEmployee.Name, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             IsEnabled="False" Grid.Row="0" Grid.Column="2"
+                             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Grid.ColumnSpan="4" />
+                    <Label x:Name="QuantityLabel" Content="Quantity:" Foreground="White" Grid.Row="1" Grid.Column="1"
+                           Margin="-1,10,5,0"
+                           d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+                    <Label x:Name="PriceLabel" Content="Price:" Foreground="White" Grid.Row="1" Grid.Column="4"
+                           Margin="2.787,10,4,0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+                    <TextBox x:Name="QuantityTextBox" Margin="5,10,0.484,10" TextWrapping="Wrap"
+                             Text="{Binding SelectedEmployee.ContactInfo, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Grid.Row="1" Grid.Column="2" TabIndex="3" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" >
+                        <i:Interaction.Behaviors>
+                            <presentation:TextBoxInputBehavior InputMode ="DigitInput"/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBox x:Name="PriceTextBox" Margin="1,10,0,10" TextWrapping="Wrap"
+                             Text="{Binding SelectedEmployee.ContactInfo, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Grid.Row="1" Grid.Column="5" TabIndex="4" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" >
+                        <i:Interaction.Behaviors>
+                            <presentation:TextBoxInputBehavior InputMode ="DecimalInput"/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </Grid>
+                <Grid Margin="0,-16,0,0" Grid.Row="2" Background="{DynamicResource StatusBarBrush}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="155*" />
+                        <ColumnDefinition Width="8*" />
+                        <ColumnDefinition Width="155*" />
+                        <ColumnDefinition Width="10*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="33.6" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border Margin="0,0.333,-0.523,0" Background="{DynamicResource HeaderBrush}"
+                            BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5"
+                            Grid.Row="1" Grid.Column="1"
+                            d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin">
+                        <Button x:Name="AddToOrderButton" Content="Add To Order" BorderThickness="1"
+                                BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Height="31.267"
+                                VerticalAlignment="Top"
+                                Click="AddToOrderButton_Click" TabIndex="5" />
+                    </Border>
+                    <Border Margin="2,0,0,0" Background="{DynamicResource HeaderBrush}"
+                    	BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5" Grid.Column="3" Grid.Row="1">
+                        <Button x:Name="ExpressCheckoutButton" Content="Express Checkout" BorderThickness="1"
+                    		BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Height="31.267"
+                    		VerticalAlignment="Top"
+                    		Click="ExpressCheckoutButton_OnClick" TabIndex="6" />
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+        <Grid Margin="0,1,0,0" Background="{DynamicResource StatusBarBrush}" Grid.Row="4" Grid.ColumnSpan="2" d:LayoutOverrides="TopMargin, BottomMargin" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="77*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="77*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="77*" />
+                <ColumnDefinition Width="6*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="33.6" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border
+                Margin="-0.333,0.333,0,0" Background="{DynamicResource HeaderBrush}"
+                BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5" Grid.Row="1"
+                Grid.Column="5" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                <Button x:Name="CheckoutButton" Content="Checkout"
+                        BorderThickness="1" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"
+                        Click="CheckoutButton_Click" TabIndex="10" />
+            </Border>
+            <Border Margin="0,0.333,-0.523,0" Background="{DynamicResource HeaderBrush}"
+                    BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5" Grid.Row="1"
+                    Grid.Column="3"
+                    d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin">
+                <Button x:Name="CancelOrderButton" Content="Cancel Order" BorderThickness="1"
+                        BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"
+                        Click="CancelOrderButton_Click" TabIndex="11" />
+            </Border>
+            <Border
+                Margin="-0.333,0.333,0,0" Background="{DynamicResource HeaderBrush}"
+                BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5" Grid.Row="1"
+                d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Grid.Column="1">
+                <Button x:Name="RemoveEntryButton" Content="Remove Entry"
+                        BorderThickness="1" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"
+                        Click="RemoveEntryButton_Click" />
+            </Border>
+        </Grid>
+        <Grid Margin="0,-5.097,2,4.68" Opacity="0.8" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" d:LayoutOverrides="LeftMargin, RightMargin">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="107.417" />
+                <RowDefinition Height="57"/>
+            </Grid.RowDefinitions>
+            <Grid d:LayoutOverrides="LeftMargin, RightMargin" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="58*" />
+                    <ColumnDefinition Width="113*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8.983" />
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="51.434"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="NoteLabel" Content="Contact Info:" Foreground="White" Margin="62,-2.886,5,8.983" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+                <Label x:Name="ContactInfoLabel" Content="Note:" Margin="62,-3.983,5,7" Foreground="White"
+                       Grid.Row="2"
+                       Grid.Column="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+                <TextBox x:Name="ContactInfoTextBox" TextWrapping="Wrap"
+                         Text="{Binding SelectedEmployee.Id, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="True" Margin="5,1.017,79,8.983"
+                         Grid.Row="1" Grid.Column="1" TabIndex="7" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+                <TextBox x:Name="NoteTextBox" Margin="5,1.017,79,7" TextWrapping="Wrap"
+                         Text="{Binding SelectedEmployee.Name, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="true" Grid.Row="2" Grid.Column="1" TabIndex="8" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+                <Label x:Name="ContactInfoLabelCopy" Content="Paid:" Margin="62,-2,5,6" Foreground="White"
+                	Grid.Row="3"
+                	Grid.Column="0" d:LayoutOverrides="LeftMargin, RightMargin" />
+                <CheckBox x:Name="CheckBox" Content="Cash Pay" Grid.Column="1" Margin="5,4,79,3.2" Grid.Row="3" Checked="CheckBox_OnChecked" Unchecked="CheckBox_OnChecked" TabIndex="9" Foreground="#FFFBF8F8"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="0,0.496,10,21" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="108*" />
+                <ColumnDefinition Width="57*"/>
+                <ColumnDefinition Width="67*"/>
+                <ColumnDefinition Width="121*"/>
+                <ColumnDefinition Width="123*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="14*" />
+                <RowDefinition Height="25.05" />
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="9*" />
+                <RowDefinition Height="193*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+        		CornerRadius="10" Background="{DynamicResource HeaderBkgBrush}" Grid.Row="4" Margin="-1,1.292,1,-19.988" d:LayoutOverrides="LeftMargin, RightMargin" Grid.ColumnSpan="6">
+                <DataGrid x:Name="SupplyOrderDataGrid"
+        			Background="{x:Null}" Opacity="0.8" AutoGenerateColumns="False"
+        			AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+        			HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+        			IsReadOnly="True" Margin="5,5,5,5" BorderThickness="0"
+        			SelectionChanged="SupplyOrderDataGrid_SelectionChanged" IsTextSearchEnabled="True"
+        			BorderBrush="{x:Null}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Width="0.55*" Binding="{Binding ItemName}" />
+                        <DataGridTextColumn Header="Quantity" Width="0.15*" Binding="{Binding Quantity}" />
+                        <DataGridTextColumn Header="Price" Width="0.3*" Binding="{Binding Price}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Border Grid.Row="0" Margin="0,1,1,0" Background="{DynamicResource HeaderBkgBrush}"
+        		BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="10"
+        		d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Grid.RowSpan="3" Grid.ColumnSpan="6">
+                <Label x:Name="TotalAmountLabel" Content="Total Amount:" Margin="239,9,133,9" Foreground="#FFF9F1F1"
+        			FontSize="16" d:LayoutOverrides="HorizontalAlignment" />
+            </Border>
+            <Label x:Name="InvoiceIdLabel" Content="Invoice No:" Margin="10,-3.682,1,-0.305"
+        		Foreground="#FFF9F1F1" FontSize="16" Grid.Row="1" />
+            <TextBox x:Name="InvoiceIdTextBox" TextWrapping="Wrap"
+        		Text="{Binding SelectedEmployee.Id, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        		IsEnabled="False" Margin="-1,-2.124,0,-0.596" FontSize="16"
+        		Grid.Row="1" Grid.Column="1" />
+            <TextBox x:Name="TotalAmountTextBox" TextWrapping="Wrap"
+        		Text="{Binding SelectedEmployee.Id, ElementName=EmployeeManagement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        		IsEnabled="False" Margin="-0.259,-2.124,0,-0.596" FontSize="16" Grid.Row="1" Grid.Column="4" />
+        </Grid>
+
+    </Grid>
+</Window>

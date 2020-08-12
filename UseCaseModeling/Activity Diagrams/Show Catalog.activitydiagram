@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="a5001db3-e43e-4092-b6eb-80c21aa07835" name="Show Catalog" linkedPackageId="ae879e29-09b8-4619-a0d1-610fd9ab7e12" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="9c5068ed-75ac-4a48-8e9a-c68b62488636">
+      <elementDefinition Id="1dfbb409-eae5-46f1-9a55-98978e3320cf" />
+      <body>Customer</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="57ccd5ee-8cb2-47d8-ad5a-015d126951e7" LastKnownName="Requests a catalogue" />
+      </annotatedElements>
+    </comment>
+    <comment Id="b5520dad-bdc9-4f48-8f10-253c970a5ac9">
+      <elementDefinition Id="a6341ed9-3e00-4067-92a9-d58c3d014d9a" />
+      <body>Cashier</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="3461265f-6748-4549-9309-4ca3acb5469b" LastKnownName="Select Catalogue" />
+      </annotatedElements>
+    </comment>
+    <comment Id="247627a9-712d-432a-aeb1-0a18c20187be">
+      <elementDefinition Id="27c9c744-35ab-475d-a1a5-a0bdda4abef5" />
+      <body>System</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="e2d91e51-1162-4024-b35c-c4bec238c782" LastKnownName="Show Catalogue" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="45e32003-48c9-4c57-88ba-e880db7814ee" name="Show Catalog" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="b9bf4496-cd18-4a45-87db-5097dd1cd4e0" />
+        <nodes>
+          <initialNode Id="df02c124-f8e5-4e9d-a5c1-1e2a212a7a23" name="Initial1" isLeaf="false">
+            <elementDefinition Id="a6c0d40f-c83d-417e-865a-a50957e8db64" />
+            <flowNodeTargets>
+              <controlFlow Id="92df038e-e1c3-4358-96ce-7b301ad1df7e" isLeaf="false">
+                <opaqueActionMoniker Id="57ccd5ee-8cb2-47d8-ad5a-015d126951e7" LastKnownName="Requests a catalogue" />
+                <elementDefinition Id="8b841338-a467-4dcb-a23b-8d3619de8b3d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="57ccd5ee-8cb2-47d8-ad5a-015d126951e7" name="Requests a catalogue" isLeaf="false">
+            <elementDefinition Id="9b0a1627-8f7e-42f7-90b1-6eccb6459af6" />
+            <flowNodeTargets>
+              <controlFlow Id="a02510d4-24ba-47cc-9e50-fd4b6bdebb2b" isLeaf="false">
+                <opaqueActionMoniker Id="3461265f-6748-4549-9309-4ca3acb5469b" LastKnownName="Select Catalogue" />
+                <elementDefinition Id="765adde5-d8eb-4e2d-bc0d-f39006524e03" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3461265f-6748-4549-9309-4ca3acb5469b" name="Select Catalogue" isLeaf="false">
+            <elementDefinition Id="084040c8-8d02-4220-97e1-84a91dc0f7e1" />
+            <flowNodeTargets>
+              <controlFlow Id="fd3eaf96-0804-41f0-92af-a0b70d128815" isLeaf="false">
+                <opaqueActionMoniker Id="e2d91e51-1162-4024-b35c-c4bec238c782" LastKnownName="Show Catalogue" />
+                <elementDefinition Id="178d6096-8732-4a3e-9fdb-11cd048fce37" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e2d91e51-1162-4024-b35c-c4bec238c782" name="Show Catalogue" isLeaf="false">
+            <elementDefinition Id="7023f7a8-3d95-492f-9fd2-21277766a52a" />
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="ae879e29-09b8-4619-a0d1-610fd9ab7e12" name="UseCaseModeling">
+    <elementDefinition Id="b15daa4c-d792-40ef-b4a0-1754e21277fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c8b5697c-cb9a-41f6-ba03-76cff6dbfecc">
+        <profileInstance Id="a70fcb2c-230c-44cc-9176-de04c6f1b2c1" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="906054b4-5fc1-40fa-be7a-78b273982cc5">
+        <profileInstance Id="4466dff5-861c-4aee-899b-655be819203c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

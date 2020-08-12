@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="0a16e62f-127d-478c-a3a6-8fe7ca02abdb" name="Generate Invoice" linkedPackageId="13ee723c-eed5-4d74-9082-df26c95f5b11" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="4ff7b489-eef6-4e95-8a82-857e1486d901">
+      <elementDefinition Id="0e05ef0a-b00d-4bbd-9fd1-8895b0c90c72" />
+      <body>Customer</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="22dc4d65-8158-4e68-a637-4c05903c53c1" LastKnownName="Requests an invoice" />
+      </annotatedElements>
+    </comment>
+    <comment Id="62a1eb7a-a909-45ac-a733-5fb6582f7b49">
+      <elementDefinition Id="0de27121-64e3-4f99-96a6-285b47d79fad" />
+      <body>Cashier</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="8583ecaf-7b72-481e-8b26-660213db70fb" LastKnownName="Enter Invoice number" />
+      </annotatedElements>
+    </comment>
+    <comment Id="39661c8c-0cf1-4f2b-a90b-02c189991a72">
+      <elementDefinition Id="2c333c4c-9362-424b-9c07-6b059a26bdb5" />
+      <body>System</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="1e7849bd-0048-4beb-beed-d76984e00caa" LastKnownName="Search for  invoice" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="da9632a5-a925-4036-80a3-ae2f0e231454" name="Generate Invoice" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="4a1897a0-5411-428c-9f60-0344207ab66b" />
+        <nodes>
+          <initialNode Id="8b0fd76a-5219-4676-93a8-12d4f1edacfe" name="Initial1" isLeaf="false">
+            <elementDefinition Id="ec0609d7-1f21-4e79-837c-edbf31ea808e" />
+            <flowNodeTargets>
+              <controlFlow Id="90ecc84e-d54c-43fd-aa3a-dfb0655a9cbb" isLeaf="false">
+                <opaqueActionMoniker Id="22dc4d65-8158-4e68-a637-4c05903c53c1" LastKnownName="Requests an invoice" />
+                <elementDefinition Id="a16ebb72-9fad-4134-a190-93b16cd201fa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="22dc4d65-8158-4e68-a637-4c05903c53c1" name="Requests an invoice" isLeaf="false">
+            <elementDefinition Id="5270515b-112d-454a-b8ed-981eddb8d900" />
+            <flowNodeTargets>
+              <controlFlow Id="03e16b24-fe87-4beb-981c-8ade9de52b9d" isLeaf="false">
+                <opaqueActionMoniker Id="8583ecaf-7b72-481e-8b26-660213db70fb" LastKnownName="Enter Invoice number" />
+                <elementDefinition Id="b1635b0b-b48f-4d63-82be-e0f44e9508df" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8583ecaf-7b72-481e-8b26-660213db70fb" name="Enter Invoice number" isLeaf="false">
+            <elementDefinition Id="851c321e-f3fd-4eb0-ae2b-f7d177a906ec" />
+            <flowNodeTargets>
+              <controlFlow Id="ec3ff667-6a72-4742-9bc6-f2ddef670ef4" isLeaf="false">
+                <opaqueActionMoniker Id="1e7849bd-0048-4beb-beed-d76984e00caa" LastKnownName="Search for  invoice" />
+                <elementDefinition Id="39919b5c-8b67-421d-966a-17ca64e0fb98" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="1e7849bd-0048-4beb-beed-d76984e00caa" name="Search for  invoice" isLeaf="false">
+            <elementDefinition Id="4b943507-4b29-4511-9d27-4854c9bac950" />
+            <flowNodeTargets>
+              <controlFlow Id="36c441a7-ca4e-4bd4-aca9-801544a61081" isLeaf="false">
+                <opaqueActionMoniker Id="e00a328d-dc98-456a-a7ed-7780b641a03d" LastKnownName="Show invoice" />
+                <elementDefinition Id="7a7e259d-3542-4b45-9563-db95f80f0955" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e00a328d-dc98-456a-a7ed-7780b641a03d" name="Show invoice" isLeaf="false">
+            <elementDefinition Id="14c547e5-8f54-4e26-af2d-4fcbdffcf4c2" />
+            <flowNodeTargets>
+              <controlFlow Id="e48bbdd0-fcef-4fb5-9d7b-be6dc1321ef8" isLeaf="false">
+                <opaqueActionMoniker Id="a3893619-2e71-423e-b3c2-e73eb2acdbea" LastKnownName="Select Print Invoice" />
+                <elementDefinition Id="cf8bca0e-8db4-4c07-b930-a3d1cba9288b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a3893619-2e71-423e-b3c2-e73eb2acdbea" name="Select Print Invoice" isLeaf="false">
+            <elementDefinition Id="c15d8658-6352-4bd7-9b30-a88513169b33" />
+            <flowNodeTargets>
+              <controlFlow Id="98b59bbb-b6ff-4990-b0b7-04e13f610912" isLeaf="false">
+                <opaqueActionMoniker Id="40a8ef3b-5b69-4a57-a479-95b8b7b089bb" LastKnownName="Print Invoice" />
+                <elementDefinition Id="e61a65d2-d430-4c2b-838a-65928088c677" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="40a8ef3b-5b69-4a57-a479-95b8b7b089bb" name="Print Invoice" isLeaf="false">
+            <elementDefinition Id="54ff8c9d-b01c-4ccd-af43-755ac3a48f48" />
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="13ee723c-eed5-4d74-9082-df26c95f5b11" name="UseCaseModeling">
+    <elementDefinition Id="b15daa4c-d792-40ef-b4a0-1754e21277fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="d9fbe853-6fa5-464c-a886-8bdd6fd4c209">
+        <profileInstance Id="64bf088e-9d31-427a-ac1a-f4226c89441a" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="652d7bf8-88e9-4124-856f-56eb2e3fca61">
+        <profileInstance Id="a76c8cbf-84f1-4095-9f10-37e3029740c5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

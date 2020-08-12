@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="e8bf5262-f62c-4eaa-97f4-69dfeff5f996" name="Pay Employee" linkedPackageId="ff7681fd-963a-4382-ac80-b23612d3c02c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="4f8fa583-8a86-411e-8021-cafa7cda3138" name="Pay Employee" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="94d2ec34-b01c-4ff9-9c30-2a5baa8da8d7" />
+        <nodes>
+          <initialNode Id="8111a9c6-ec7a-4a5e-96dc-e91990bfa8f7" name="Initial1" isLeaf="false">
+            <elementDefinition Id="007892ed-299d-49c3-8228-d9417a38ab60" />
+            <flowNodeTargets>
+              <controlFlow Id="3a192c86-fe62-4fb8-ba13-a44b8b5965c7" isLeaf="false">
+                <opaqueActionMoniker Id="f8bd25d7-f27d-48f7-ab81-6da3066b697e" LastKnownName="Pay employee" />
+                <elementDefinition Id="0bc932ad-3ef6-4616-b50f-cd70806fefd9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="f8bd25d7-f27d-48f7-ab81-6da3066b697e" name="Pay employee" isLeaf="false">
+            <elementDefinition Id="3db3dc55-f62c-4d04-851d-8fad336b31d7" />
+            <flowNodeTargets>
+              <controlFlow Id="5f4b4b45-a243-4f02-870b-95b84d756d0b" isLeaf="false">
+                <opaqueActionMoniker Id="f9700928-2bf0-4260-b606-a7ff167b72f4" LastKnownName="show employee list" />
+                <elementDefinition Id="6dc073e6-a773-4e99-ab03-1fcfd9e579dd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f9700928-2bf0-4260-b606-a7ff167b72f4" name="show employee list" isLeaf="false">
+            <elementDefinition Id="44fc7da8-ac15-423d-a065-5bd3ed7ee8a5" />
+            <flowNodeTargets>
+              <controlFlow Id="fd878d56-11b9-4c3a-bf7e-85e1fb3184e5" isLeaf="false">
+                <opaqueActionMoniker Id="f94afdf8-cf84-4330-beed-229576667d00" LastKnownName="select one or more employees" />
+                <elementDefinition Id="ec4b4493-edba-4600-8eb0-bf2008206cc9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f94afdf8-cf84-4330-beed-229576667d00" name="select one or more employees" isLeaf="false">
+            <elementDefinition Id="8a78335f-9326-4437-b0f8-b963537c5988" />
+            <flowNodeTargets>
+              <controlFlow Id="b33dd33f-b22c-4020-bd87-5f5f08f272f1" isLeaf="false">
+                <opaqueActionMoniker Id="2aac2cd3-f7b2-4eca-a622-86627039efa7" LastKnownName="enter amount paid" />
+                <elementDefinition Id="b8bdbbe8-cfb9-4146-a1dd-31c04e153e3b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2aac2cd3-f7b2-4eca-a622-86627039efa7" name="enter amount paid" isLeaf="false">
+            <elementDefinition Id="8e63b462-14f2-47f3-a44f-0e603a9a52cd" />
+            <flowNodeTargets>
+              <controlFlow Id="31fe6be1-94a0-45a9-9e26-7ff598a16659" isLeaf="false">
+                <opaqueActionMoniker Id="61669eeb-572c-4d8f-8cdf-87a5a17212cd" LastKnownName="save" />
+                <elementDefinition Id="60f2e05c-7b93-49fd-9a99-8c7f15018256" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="61669eeb-572c-4d8f-8cdf-87a5a17212cd" name="save" isLeaf="false">
+            <elementDefinition Id="98f3d35a-66a3-4d1a-a254-4c112636be6f" />
+            <flowNodeTargets>
+              <controlFlow Id="7d91022a-fed7-4b26-8a1c-0018679b7384" isLeaf="false">
+                <opaqueActionMoniker Id="40c28887-930e-4336-8587-e2f0aa265774" LastKnownName="update each employee with details provided " />
+                <elementDefinition Id="1a98ff0e-af33-4464-977c-bb0564987997" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="40c28887-930e-4336-8587-e2f0aa265774" name="update each employee with details provided " isLeaf="false">
+            <elementDefinition Id="6d6356fe-c7ac-4a0b-8ec8-be2181b8b7b3" />
+            <flowNodeTargets>
+              <controlFlow Id="61810e76-9da7-4935-802c-27dad4de1684" isLeaf="false">
+                <activityFinalNodeMoniker Id="99d7f1ff-6e42-4771-ba96-03f133d31b7f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="c071fc85-cb5c-4c50-82f1-4e5bf87a989f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="99d7f1ff-6e42-4771-ba96-03f133d31b7f" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="18ea6866-adf9-4754-ac98-24cd0d79b191" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="ff7681fd-963a-4382-ac80-b23612d3c02c" name="UseCaseModeling">
+    <elementDefinition Id="b15daa4c-d792-40ef-b4a0-1754e21277fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="cc923541-d255-40a0-ba37-317c2ea12e25">
+        <profileInstance Id="0c8db074-43cd-4f4b-ba4e-2ff06a78564b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b06601e3-b5ee-460a-bdf5-b50e71417b95">
+        <profileInstance Id="3c004959-a443-4368-a6c2-173f9b7019cd" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

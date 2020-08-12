@@ -1,0 +1,85 @@
+﻿<Window x:Class="Presentation.Views.Orders.OrdersRecord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.Views"
+        mc:Ignorable="d"
+        Title="Orders Record" Height="576" Width="1050" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,4,0">
+        <Grid MinWidth="1039" MinHeight="547">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="877*"/>
+                <ColumnDefinition Width="163*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ReverseButton" Content="Reverse Order" HorizontalAlignment="Left" Height="48" Margin="584,408,0,0" VerticalAlignment="Top" Width="255" FontSize="24" Background="{DynamicResource HeaderBrush}" Foreground="White" BorderBrush="White" Click="UpdateButton_Click"/>
+            <Border HorizontalAlignment="Left" Height="315" 
+    			Margin="10,141,0,0" VerticalAlignment="Top" Width="555"
+    			Background="{DynamicResource HeaderBkgBrush}"
+    			BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+    			CornerRadius="10">
+                <DataGrid x:Name="OrdersDatagrid" Opacity="0.85" Background="{x:Null}"
+    				AutoGenerateColumns="False" ColumnWidth="*"
+    				AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+    				HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+    				IsReadOnly="True" BorderThickness="0"
+    				CanUserResizeColumns="False" CanUserReorderColumns="False" MaxColumnWidth="150" SelectionMode="Single" CanUserResizeRows="False" Margin="-1" SelectionChanged="OrdersDatagrid_SelectionChanged" FontSize="16">
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+    						Color="CadetBlue" />
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="OrderID" Width="0.04*" Binding="{Binding OrderId}" />
+                        <DataGridTextColumn Header="UserID" Width="0.036*" Binding="{Binding UserId}" />
+                        <DataGridTextColumn Header="Note" Width="1*" Binding="{Binding Note}" />
+                        <DataGridTextColumn Header="Date" Width="0.4*" Binding="{Binding DateTime}" />
+                        <DataGridTextColumn Header="Total" Width="0.09*" Binding="{Binding Total}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Label x:Name="TitleLabel" Content=" Orders Record" Margin="0,0,10,468"
+    			Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"
+    			FontSize="32" Grid.ColumnSpan="2"/>
+            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="10,408,0,0" VerticalAlignment="Top" Width="125" Height="48" FontSize="26.667" Background="{DynamicResource HeaderBrush}" BorderBrush="White" Foreground="White" Click="CancelButton_Click" Grid.Column="1"/>
+            <Border HorizontalAlignment="Left" Height="258" 
+    			Margin="584,141,0,0" VerticalAlignment="Top" Width="439"
+    			Background="{DynamicResource HeaderBkgBrush}"
+    			BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+    			CornerRadius="10" Grid.ColumnSpan="2">
+                <DataGrid x:Name="OrderEntriesDataGrid" Opacity="0.85" Background="{x:Null}"
+    				AutoGenerateColumns="False" ColumnWidth="*"
+    				AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+    				HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+    				IsReadOnly="True" BorderThickness="0"
+    				CanUserResizeColumns="False" CanUserReorderColumns="False" MaxColumnWidth="150" SelectionMode="Single" CanUserResizeRows="False" Margin="-1" SelectionChanged="OrdersDatagrid_SelectionChanged" FontSize="16">
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+    						Color="LightCyan" />
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ProductID" Width="0.18*" Binding="{Binding ProductId}" />
+                        <DataGridTextColumn Header="Item/Service" Width="0.9*" Binding="{Binding ItemName}" />
+                        <DataGridTextColumn Header="Quantity" Width="0.17*" Binding="{Binding Quantity}" />
+                        <DataGridTextColumn Header="NetPrice" Width="0.25*" Binding="{Binding NetPrice}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Border Margin="10,88,17,420" Background="{DynamicResource HeaderBkgBrush}"
+    			BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="10" Grid.ColumnSpan="2">
+                <TextBox x:Name="SearchTextBox" Margin="9,-1" TextWrapping="Wrap"
+    				Text="Enter order date here" FontSize="21.333"
+    				Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" BorderThickness="0" Opacity="0.75"
+    				CaretBrush="{DynamicResource LightBorderBrush}"
+    				SelectionBrush="{DynamicResource LightBorderBrush}" TextChanged="SearchTextBox_TextChanged" />
+            </Border>
+            <Image x:Name="LogoImage" Source="/Presentation;component/Resources/Header.png" Grid.Row="0"
+    			Opacity="0.8" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+    			UseLayoutRounding="False" Stretch="UniformToFill" Margin="1,0,0,470" Grid.Column="1" />
+
+        </Grid>
+
+    </Grid>
+</Window>

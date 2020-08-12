@@ -1,0 +1,45 @@
+﻿<Window x:Class="Presentation.Views.Supplies.SuppliedItemAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.Views"
+        mc:Ignorable="d" Topmost="True"
+        Title="Add Supplied Item" Height="320" Width="440" WindowStyle="None"
+        WindowStartupLocation="CenterScreen" MouseLeave="Window_MouseLeave" 
+        PreviewKeyDown="SuppliedItemAdd_OnPreviewKeyDown">
+    <Window.Background>
+        <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg" Stretch="UniformToFill" />
+    </Window.Background>
+    <Grid>
+        <Border BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+    		CornerRadius="10" Background="{DynamicResource HeaderBkgBrush}" Margin="10,62,10,10">
+            <DataGrid x:Name="InventoryDataGrid" 
+    			Background="{x:Null}" Opacity="0.8"
+    			AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+    			HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+    			IsReadOnly="True" Margin="5,5,5,5" BorderThickness="0"
+    			SelectionChanged="InventoryDataGrid_SelectionChanged" IsTextSearchEnabled="True"
+    			BorderBrush="{x:Null}" AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                                         Color="LightCyan" />
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Item Name" Width="1*" Binding="{Binding Name}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+        <Border Margin="10,10,10,254.173" Background="{DynamicResource HeaderBkgBrush}"
+    		BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="10">
+            <TextBox x:Name="SearchItemTextBox" TextWrapping="Wrap" Text="Search Item..."
+    			Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Margin="9,8,9,7"
+    			VerticalAlignment="Center" BorderThickness="0" Opacity="0.8"
+    			GotFocus="SearchItemTextBox_GotFocus" LostFocus="SearchItemTextBox_GotFocus"
+    			CaretBrush="{DynamicResource LightBorderBrush}"
+    			SelectionBrush="{DynamicResource LightBorderBrush}" TextChanged="SearchItemTextBox_OnTextChanged"
+    			FontSize="20" TabIndex="2" />
+        </Border>
+
+    </Grid>
+</Window>

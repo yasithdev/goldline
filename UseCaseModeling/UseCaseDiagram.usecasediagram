@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="27614a13-82a1-430f-a90e-245f6fdd0303" name="UseCaseDiagram" linkedPackageId="d94556a9-3ef1-493c-bb60-c6e5e1eb5015" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="33b2988f-8791-4ebc-977a-3d7499b793b2" name="Cashier" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a15656e2-46d6-4aae-a6ff-27858fd9c0ea" />
+        <targetEnds>
+          <association Id="8b99efdb-2d65-4744-a0da-0f3192fdfa2b" isDerived="false" sourceEndRoleName="Cashier" targetEndRoleName="Place New Order" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="12b3c71a-2884-46f3-8635-ccac9a25cda1" LastKnownName="Place Cash Order" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cbe63bce-2cdf-4f3b-addc-6ef502beeadc" name="Cashier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f92f7f3a-2039-49e5-a8e7-8364b0a962b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2cc83d19-23fb-4671-aea3-5f1b91463765" name="Place New Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2b8616cd-872a-453a-a8ad-f71084ae97cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e2c25ae4-a4fa-4652-9b68-729b7e5d7974" />
+          </association>
+          <association Id="29abdcdd-0e67-4b3d-883f-218ac28f2404" isDerived="false" sourceEndRoleName="Cashier" targetEndRoleName="Generate Invoice" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="aa830c15-6984-403c-bca7-afd83a96a213" LastKnownName="Generate Invoice" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ad3f10eb-7482-44e4-8ced-2f51b9d8b2a9" name="Cashier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ba0fd698-b587-40b1-aa2f-4e1b5ca60468" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9f57c530-7f9f-40d2-927d-8b06966b704d" name="Generate Invoice" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f5d925be-036e-47dd-82bf-785f39dc5327" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9815bc1d-5070-48d6-baf8-dd02e74b2c3d" />
+          </association>
+          <association Id="a25b0c26-3430-464d-89e0-0a9791ec0d17" isDerived="false" sourceEndRoleName="Cashier2" targetEndRoleName="Show Catalog" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="650c86ce-983f-4985-b7fa-9c62daf36c4b" LastKnownName="Show Catalog" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c06ed88e-102b-46db-b687-793fb3d69285" name="Cashier2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="484bdc9d-912b-43c2-ae20-7a12ab46c3f4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0169070-c924-4330-92d6-23475fc55cac" name="Show Catalog" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5082de94-62bc-4bf8-bc44-e20faa857811" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2026e759-a6b9-4e94-9dfd-69b46acfd69f" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="3c9fa5fa-fb03-49f0-8c85-0481239facaf" name="Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="70c5ab32-9cc0-4b3a-b38d-91f5d651426c" />
+        <targetEnds>
+          <association Id="b6b2aa1f-f618-489a-8437-16a12411cf33" isDerived="false" sourceEndRoleName="Inventory Manager" targetEndRoleName="Accept defective item" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="650c86ce-983f-4985-b7fa-9c62daf36c4b" LastKnownName="Show Catalog" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f068c74c-9d76-4684-9c2a-554a0760abf2" name="Inventory Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4a502ec1-41ef-49be-8b3f-00fdc9d50396" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f6568bfa-237b-4547-b440-e2ca37c8554e" name="Accept defective item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="94dde0ea-fa96-4166-b1af-7c91d7afbc22" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3f0b1de5-afe8-4ec0-9775-80b01c17851e" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="7d50d377-1975-49ae-b3cc-1c2fd0137bc7" name="Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1805b5ed-4f9e-4d9a-a556-aca5c32062f1" />
+        <targetEnds>
+          <association Id="4f146109-10ce-43fb-a1b9-f1cc614ebcb1" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="UseCase3" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5996d45c-d676-4017-806d-5d4451e0f545" LastKnownName="Update Employee Details" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6db4b665-3ce2-434a-a746-f09560f93e5b" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5f60d2dd-8997-4311-bdbf-25cbddb5cae1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5bfff168-20a7-4635-b98f-9be0a6dda095" name="UseCase3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4e4d16a8-aa1a-4e54-aeaa-536e33558e80" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e1427702-c35a-4835-9b0e-1d00c0fd3abb" />
+          </association>
+          <association Id="8d96a47b-cfc8-4885-ae95-9385379f9262" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="UseCase5" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e4d003de-25b9-4230-943f-8028f01c89ea" LastKnownName="Archive Employee" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e81316a4-9fcd-428b-9d54-90d226300180" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7c4807d0-6862-4446-9bd8-9870186e71b5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bc2fccb4-7356-43b7-9a31-699f25e03244" name="UseCase5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a59b07b9-3205-4185-a575-b81bb7e42059" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="902866d7-78ba-4203-8e46-b7a9ba406a09" />
+          </association>
+          <association Id="3f1d1273-186b-4f17-a333-ad381d3fcea2" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Provide loan" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="af97d6d2-c3ae-4826-90d9-66ece3a689fd" LastKnownName="Pay Employee" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9097ab16-fc65-4f56-b783-a92431d9e783" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0eebdc5c-ef01-4920-b58e-e7e3b4ef757d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ed9bdbfe-1776-40e5-a27a-e70de58e5384" name="Provide loan" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="76bcca4e-2529-49ff-b691-f2eefa09dc51" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bc32a471-3112-4778-9473-2e8c6e74f618" />
+          </association>
+          <association Id="7a906e18-5151-4903-a002-7501f68fbd1a" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Add new Employee" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e7e75e62-5ba8-4221-869a-4fe9ea1090e2" LastKnownName="Add Employee" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fa261476-a421-4f34-98ee-0032eb2d936e" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="df0b6c61-0d3e-48e1-9a61-567e987883d4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="29d13590-c8a5-4c13-a177-73d61630e903" name="Add new Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0f88818d-fa85-4bc2-ae66-c48a9a077b86" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="238c7471-7157-4ccb-b8bd-fcaa43e26f2d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="34822edc-849f-453b-acf0-4b21f19e6f86" name="System" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f5b1e134-e405-43bf-9c51-31bb48bf2f04" />
+        <targetEnds>
+          <association Id="ab21ead3-55e3-40e2-8626-df744143de0b" isDerived="false" sourceEndRoleName="System" targetEndRoleName="notify due credit bills" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c8032eb5-bdff-4147-a76f-a8fa9d1fc050" LastKnownName="Notify Due Credit Bills" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5fe78823-d229-4c85-a4f4-6f3603b31853" name="System" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5bf0a7a3-59b4-463f-aeb3-7659d6b64dfe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="00cf41c1-000c-4ca4-973c-176c3e364efc" name="notify due credit bills" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bfc12112-eba4-416c-b325-19b53ff63d9d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="79ab4168-145a-4d1e-883b-7e93b022c889" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="550478e7-041d-47ab-b2dd-590e6b35400c" name="Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bcd9edf3-3b74-4e49-a5fc-d2352cce34ed" />
+        <targetEnds>
+          <association Id="76627462-ef70-4fc6-a2be-559fa882e0d8" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Update customer details" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7b88d6cc-c50d-4dc6-a1bd-cc2186f512d0" LastKnownName="Update Customer Details" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="45815301-959d-423c-9dee-6d143d20c1d4" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="af6a11df-2d8b-44eb-ac33-d3966793dd84" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="05783287-9f97-43a7-a176-93b4c4e39ff1" name="Update customer details" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="267ec4a2-5a65-4f5f-a88c-8aec506e5d75" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="296b5923-66aa-4fac-bb2e-111011515a89" />
+          </association>
+          <association Id="2cc6c505-2b24-4c99-beb9-2205b68cdd04" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Add new credit customer" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="76585b4b-2f94-4569-8d11-9fd1f65df3b0" LastKnownName="Add Credit Customer" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1584958b-e606-4d4c-955c-dc315a895fd4" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3fa2227d-592c-41c8-bc56-5a4ef883bc5a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbd52d19-308f-4e5d-bf1f-cd10790653bc" name="Add new credit customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e9a673bf-fce9-408b-b08a-663a0499a833" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a0729b1f-ec37-4454-8816-c670bacfd103" />
+          </association>
+          <association Id="69517f71-044d-493b-b191-7d5bb9fed83b" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Review invoices and reports" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c96a8e45-d31e-4eba-a571-3d4eafc6df36" LastKnownName="Settle Credit Bill" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="09f4f35a-ade8-421a-b1aa-6eb318084dfc" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="96fc0b68-9da3-45b8-8d96-a5cb004ac09a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f8fc26d0-ef39-4619-af06-310069c7e575" name="Review invoices and reports" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4f76b195-f0b7-4dba-82ef-a0d115dcca3d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="31acbcf9-8443-45b9-823e-211fef6d77c6" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="5cf79e0a-5de2-46a1-82a1-1b672b6e3921" name="Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9defa47b-c866-494f-8448-b73fb32c6225" />
+        <targetEnds>
+          <association Id="9b0b2a03-8024-4a0f-82c8-09391e3de29f" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="update catalogue prices" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6dde2105-c8ef-440d-b4d1-cb2830c14325" LastKnownName="Update Catalog Prices" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2858d14b-8b6c-48c0-a2cc-4e0dc0a98546" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c3f1db25-f7f2-4a83-804b-a890dfc27ac1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6953b5cf-3a1c-45ad-82b9-c7aa8109d646" name="update catalogue prices" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5486d87a-cc1b-4e67-bd32-4496c0a53773" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="db12fbe1-8de1-42e1-9380-505a87786708" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="7cdc0f05-ba69-40e4-aac4-ef7bb0f0f6cf" name="Inventory Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b1d317fb-bdc5-4071-9485-2c2b06702036" />
+        <targetEnds>
+          <association Id="bfa0807e-dbc5-49a1-9f66-fd6225c325b6" isDerived="false" sourceEndRoleName="Inventory Manager" targetEndRoleName="Update stock details" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="08a86a98-22e5-459c-8eaf-6465ac3fa734" LastKnownName="Place Supply Order" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb067cca-35f8-4224-b7e2-705f61f9211f" name="Inventory Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="74cf8dfc-c67f-4ad2-b4bc-b52517a7e497" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1c0041d9-8ec2-478f-bbbc-525723332371" name="Update stock details" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dc1e5537-9685-4199-a287-4c3777a1b4b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="46902671-02b6-4fdf-b5bc-db1bb1e0f967" />
+          </association>
+          <association Id="eef72853-0966-46cb-8438-1597ff653c95" isDerived="false" sourceEndRoleName="Inventory Manager" targetEndRoleName="Check Item Availability" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7e708b93-d915-4cea-918f-00b2f89ff687" LastKnownName="Inquire Stocks" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24bf61cf-78a4-40da-b254-8ab091373f19" name="Inventory Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="367a8860-22a6-4138-9eb9-ccd3ef9445a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2e296d2e-3b6c-4fe3-b84f-55262329df7e" name="Check Item Availability" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c3c252e3-cd69-4391-9b30-a659e70df196" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bc9513bc-8c14-462e-9aab-b695e4505834" />
+          </association>
+          <association Id="9461df1b-01b8-479e-9435-cbf528f492a1" isDerived="false" sourceEndRoleName="Inventory Manager1" targetEndRoleName="Record Defective Item" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b2a09ebe-db22-4aca-afbd-7fb994a0fa78" LastKnownName="Record Defective Item" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="08dec2c6-6df8-4c60-a258-f916f019670e" name="Inventory Manager1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="689a218f-253e-46e2-ba63-425ff61f8fbb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6f42ad20-1514-4e80-9ded-8329538547cc" name="Record Defective Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6bf2d859-ba26-4937-85fb-377dc5791259" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fd215307-784e-4104-aed8-c6986683b8d0" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="51775e33-9601-4ffd-a679-4f6591564c7d" name="Cashier" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="031ab4cb-c94d-449b-ba2d-ddc443fc83dd" />
+        <targetEnds>
+          <association Id="c33f4810-83b2-4053-b4e4-74a28fe92268" isDerived="false" sourceEndRoleName="Cashier" targetEndRoleName="Check Item Availability" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7e708b93-d915-4cea-918f-00b2f89ff687" LastKnownName="Inquire Stocks" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9605566-a3e0-4d00-ab63-c28464e83f73" name="Cashier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d40b17bb-846d-4d8d-a024-b409e206144e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e7f59301-c4c0-4761-8f0c-7d286a26d933" name="Check Item Availability" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9d38a26d-4de5-4366-8e3d-85c03aa1baaf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0abf9adb-05c2-4037-a4fb-6dcf5a45ff63" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="d83852a6-35ef-40ba-ba32-3d7bfd6fb883" name="Cashier" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f714d521-6225-44f3-825f-b3ee4cf73c00" />
+        <targetEnds>
+          <association Id="0f091d3d-25f7-4cbd-ab20-4423cebeba71" isDerived="false" sourceEndRoleName="Cashier" targetEndRoleName="Place New Credit Order" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="75ac87b6-de72-4047-a483-97c6503a8fdb" LastKnownName="Place Credit Order" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c005172f-f218-4910-b95e-62f40f446455" name="Cashier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8e06095e-dc28-4868-8aa8-e554c32da192" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8626591d-1385-4863-87fe-7798050ea3c1" name="Place New Credit Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a0afa12-2ee0-4173-bf4d-d0d51995d402" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f1a4e6c3-5a41-4d98-9e46-61628558fef5" />
+          </association>
+          <association Id="f8abc184-1c07-4db0-a1c2-2c6f1e8dd3b0" isDerived="false" sourceEndRoleName="Cashier3" targetEndRoleName="Settle Credit Bill" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c96a8e45-d31e-4eba-a571-3d4eafc6df36" LastKnownName="Settle Credit Bill" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="23a2fdde-facb-4a21-a2b7-ab63c295bf59" name="Cashier3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b8de489b-425f-4909-93e8-47b502bb67cf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="22e34b85-6f28-4d73-98fa-f003d168b303" name="Settle Credit Bill" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5f66b6ec-3a32-4917-b5db-6d2414d56ae4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c9e57c6d-69d1-4237-ae85-9a716e266e6d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="57a1bd83-f2a9-46e9-a591-2166a6f5d668" name="System" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2c51aa85-57b5-4ccd-9861-3743983d32f1" />
+        <targetEnds>
+          <association Id="5969911e-7278-48e8-afde-9872972d159a" isDerived="false" sourceEndRoleName="System" targetEndRoleName="notify low stocks" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="25720323-0f64-4258-bf2d-712b20e1f196" LastKnownName="Notify Low Stocks" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a30396a8-4d05-4f04-b88e-c08087108192" name="System" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c6388a11-c3cf-4fbc-b781-cbd62e355774" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b7097848-e708-42f5-955f-659c52a36b84" name="notify low stocks" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="11a1dbe4-c4b4-4863-a977-59709bae166b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="537e05a2-bff6-47f2-924d-393373358516" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="515cb02f-a5be-4291-8acc-d8124fec3f96" name="System" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cb9fd5fe-9d91-4eb4-9e97-97525aced648" />
+        <targetEnds>
+          <association Id="60c9cdfb-35d1-40b9-b2ad-eec01b7ea303" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Review invoices and reports" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="827fc1ac-f14d-4389-a829-5be94ff063f9" LastKnownName="Generate Report" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c136a6b6-5e9a-47a1-a2c7-c91368227170" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43dc1e7a-f38f-4695-8ace-1a957fc638ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="629e4484-29ad-4019-ba07-70ae648d5225" name="Review invoices and reports" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c7412bc3-6497-4a0e-8773-a9d3fe827a05" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6b901a11-2c96-48e2-a878-ded5bf7e31cf" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="29ccd857-6d4d-4d10-80d4-22a026916323" name="Transaction and Reporting" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4d676a91-9069-4c21-8806-13c16f3ba6e7" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="12b3c71a-2884-46f3-8635-ccac9a25cda1" name="Place Cash Order" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8d1543ce-af87-40e2-b4cf-f5821d54d420" />
+        <additions>
+          <include Id="81c3970f-4f7b-4a1f-8d7d-03aa00ba7022">
+            <useCaseMoniker Id="7e708b93-d915-4cea-918f-00b2f89ff687" LastKnownName="Inquire Stocks" />
+            <elementDefinition Id="68f877ca-3e61-449a-a57d-5687f501ee3a" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="29ccd857-6d4d-4d10-80d4-22a026916323" LastKnownName="Transaction and Reporting" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="aa830c15-6984-403c-bca7-afd83a96a213" name="Generate Invoice" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="aec4240f-a921-4cca-b817-d94276c77f2d" />
+        <subjects>
+          <subsystemMoniker Id="29ccd857-6d4d-4d10-80d4-22a026916323" LastKnownName="Transaction and Reporting" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="650c86ce-983f-4985-b7fa-9c62daf36c4b" name="Show Catalog" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c6ee5801-839e-4bdf-bc5c-1e79c7a903f4" />
+        <subjects>
+          <subsystemMoniker Id="29ccd857-6d4d-4d10-80d4-22a026916323" LastKnownName="Transaction and Reporting" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="827fc1ac-f14d-4389-a829-5be94ff063f9" name="Generate Report" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cacd2cf6-7590-41e9-b9a2-523db23ca5e9" />
+        <subjects>
+          <subsystemMoniker Id="29ccd857-6d4d-4d10-80d4-22a026916323" LastKnownName="Transaction and Reporting" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="e946edcb-93d2-40db-8cb7-d47d39ef0536" name="Inventory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="69610063-3a77-4138-9613-72b55e8e5e54" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7e708b93-d915-4cea-918f-00b2f89ff687" name="Inquire Stocks" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e4f2e431-f735-4703-b73d-90fe1e34927b" />
+        <subjects>
+          <subsystemMoniker Id="e946edcb-93d2-40db-8cb7-d47d39ef0536" LastKnownName="Inventory" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="08a86a98-22e5-459c-8eaf-6465ac3fa734" name="Place Supply Order" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7fbbf9dc-b1ab-484b-90e8-c8582fdf2c3f" />
+        <subjects>
+          <subsystemMoniker Id="e946edcb-93d2-40db-8cb7-d47d39ef0536" LastKnownName="Inventory" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="25720323-0f64-4258-bf2d-712b20e1f196" name="Notify Low Stocks" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="453abcb0-6d6a-4a18-a8a2-83559e0ea52c" />
+        <subjects>
+          <subsystemMoniker Id="e946edcb-93d2-40db-8cb7-d47d39ef0536" LastKnownName="Inventory" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6dde2105-c8ef-440d-b4d1-cb2830c14325" name="Update Catalog Prices" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bb0cc435-6c2b-4c65-9511-b2f976e7714e" />
+        <subjects>
+          <subsystemMoniker Id="e946edcb-93d2-40db-8cb7-d47d39ef0536" LastKnownName="Inventory" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="2427f8c8-873b-4fb3-b7b3-27c9f723525a" name="Credit" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0fa2b980-ea12-477d-98cf-8669e3114800" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="75ac87b6-de72-4047-a483-97c6503a8fdb" name="Place Credit Order" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="41559474-69b0-4f00-b146-0712fb531d58" />
+        <subjects>
+          <subsystemMoniker Id="2427f8c8-873b-4fb3-b7b3-27c9f723525a" LastKnownName="Credit" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c8032eb5-bdff-4147-a76f-a8fa9d1fc050" name="Notify Due Credit Bills" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="12b67f36-03dc-4fbf-a3d4-c2f2df90f56e" />
+        <subjects>
+          <subsystemMoniker Id="2427f8c8-873b-4fb3-b7b3-27c9f723525a" LastKnownName="Credit" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="76585b4b-2f94-4569-8d11-9fd1f65df3b0" name="Add Credit Customer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="887cb86e-b586-4613-8ab8-779b8d7b1441" />
+        <subjects>
+          <subsystemMoniker Id="2427f8c8-873b-4fb3-b7b3-27c9f723525a" LastKnownName="Credit" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c96a8e45-d31e-4eba-a571-3d4eafc6df36" name="Settle Credit Bill" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="90f380e0-36ac-4bf2-bda0-10bead7a4dee" />
+        <subjects>
+          <subsystemMoniker Id="2427f8c8-873b-4fb3-b7b3-27c9f723525a" LastKnownName="Credit" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7b88d6cc-c50d-4dc6-a1bd-cc2186f512d0" name="Update Customer Details" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c768d43d-bc6c-41a1-8631-a304df96270c" />
+        <subjects>
+          <subsystemMoniker Id="2427f8c8-873b-4fb3-b7b3-27c9f723525a" LastKnownName="Credit" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="8a73d7bd-ee6a-42e1-ba94-a0e6f998e177" name="Employee" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4cb816ab-e59a-462f-9798-71ca850e4e66" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e7e75e62-5ba8-4221-869a-4fe9ea1090e2" name="Add Employee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e0c56999-1783-4985-b216-1a0c2a157b61" />
+        <subjects>
+          <subsystemMoniker Id="8a73d7bd-ee6a-42e1-ba94-a0e6f998e177" LastKnownName="Employee" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5996d45c-d676-4017-806d-5d4451e0f545" name="Update Employee Details" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="719ec12b-e1ab-48fd-bfc3-811bd20957dc" />
+        <subjects>
+          <subsystemMoniker Id="8a73d7bd-ee6a-42e1-ba94-a0e6f998e177" LastKnownName="Employee" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e4d003de-25b9-4230-943f-8028f01c89ea" name="Archive Employee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="090b2807-75ee-4474-a786-1679e2476d3a" />
+        <subjects>
+          <subsystemMoniker Id="8a73d7bd-ee6a-42e1-ba94-a0e6f998e177" LastKnownName="Employee" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="af97d6d2-c3ae-4826-90d9-66ece3a689fd" name="Pay Employee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="38680842-299b-4de3-913a-e2fab0d20b61" />
+        <subjects>
+          <subsystemMoniker Id="8a73d7bd-ee6a-42e1-ba94-a0e6f998e177" LastKnownName="Employee" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="b2a09ebe-db22-4aca-afbd-7fb994a0fa78" name="Record Defective Item" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f8bfe526-4c31-4ff5-98b7-c3a75510fbfa" />
+        <subjects>
+          <subsystemMoniker Id="e946edcb-93d2-40db-8cb7-d47d39ef0536" LastKnownName="Inventory" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="d94556a9-3ef1-493c-bb60-c6e5e1eb5015" name="UseCaseModeling">
+    <elementDefinition Id="b15daa4c-d792-40ef-b4a0-1754e21277fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2f3ea1a6-7e08-4c2d-aea5-367fff3de640">
+        <profileInstance Id="7704f24d-95fb-427f-b086-538b4a5f89d9" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0a63c0af-60f1-4f39-8ca8-7dad5af84fd3">
+        <profileInstance Id="e708e865-e49a-4eef-b562-d3bafba49499" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

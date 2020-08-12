@@ -1,0 +1,142 @@
+﻿<Window x:Class="Presentation.Views.Supplies.ViewSupplyOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.Views"
+        mc:Ignorable="d"
+        Title="View Supply Orders" Height="576" Width="1024"
+        WindowStartupLocation="CenterScreen" Visibility="Visible" MinWidth="1024"
+        MinHeight="576" SnapsToDevicePixels="True" WindowState="Maximized" FontSize="16"
+        PreviewKeyDown="ViewSupplyOrders_OnPreviewKeyDown">
+    <Window.Background>
+        <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg" Stretch="UniformToFill" />
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="77*" />
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="284*" />
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="123*" />
+        </Grid.RowDefinitions>
+        <Label x:Name="TitleLabel" Content="Supplied Items" Margin="5,5,5,4.363" VerticalContentAlignment="Center"
+               Foreground="#CCFFFFFF" FontSize="30"
+               d:LayoutOverrides="VerticalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin"
+               Grid.ColumnSpan="2" />
+        <Grid Margin="5" Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="817*" />
+                <ColumnDefinition Width="183*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="109*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1"
+                    CornerRadius="10" Background="{DynamicResource HeaderBkgBrush}" Grid.Row="1" Grid.ColumnSpan="2">
+                <DataGrid x:Name="SupplyOrdersDataGrid" Height="Auto"
+                          Background="{x:Null}" Opacity="0.8" AutoGenerateColumns="False"
+                          AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+                          HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+                          IsReadOnly="True" Margin="5" BorderThickness="0"
+                          SelectionChanged="SupplyOrdersDataGrid_SelectionChanged" IsTextSearchEnabled="True"
+                          BorderBrush="{x:Null}" SelectionMode="Single" VerticalAlignment="Top" KeyboardNavigation.TabNavigation="None" RowDetailsVisibilityMode="Collapsed" CanUserResizeRows="False">
+                    <DataGrid.RowHeaderTemplate>
+                        <DataTemplate>
+                            <Expander Expanded="Expander_OnAction" Collapsed="Expander_OnAction"/>
+                        </DataTemplate>
+                    </DataGrid.RowHeaderTemplate>
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <Border Background="{DynamicResource HeaderBkgBrush}">
+                                <Grid Margin="50,5,5,5" IsHitTestVisible="False" Background="{DynamicResource HeaderBkgBrush}">
+                                    <DataGrid x:Name="SupplyOrderEntriesDataGrid" Loaded="SupplyOrderEntriesDataGrid_Loaded" AutoGenerateColumns="False"
+    		                    AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"
+    		                    HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True" Opacity="0.75"
+    		                    BorderBrush="{x:Null}" FontSize="14">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Item Name" Width="0.7*" Binding="{Binding ItemName}" />
+                                            <DataGridTextColumn Header="Quantity" Width="0.1*" Binding="{Binding Quantity}" />
+                                            <DataGridTextColumn Header="Price" Width="0.2*" Binding="{Binding Price}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                                         Color="LightCyan" />
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Width="0.05*" Binding="{Binding Id}" />
+                        <DataGridTextColumn Header="Supplier" Width="0.2*" Binding="{Binding SupplierName}" />
+                        <DataGridTextColumn Header="Price" Width="0.1*" Binding="{Binding Total}" />
+                        <DataGridTextColumn Header="Date/Time" Width="0.2*" Binding="{Binding DateTime}" />
+                        <DataGridTextColumn Header="Note" Width="0.25*" Binding="{Binding Note}" />
+                        <DataGridTextColumn Header="User ID" Width="0.075*" Binding="{Binding UserId}" />
+                        <DataGridCheckBoxColumn Header="Paid" Width="0.05*" Binding="{Binding Paid}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Border Grid.Row="0" Margin="5" Background="{DynamicResource HeaderBkgBrush}"
+                    BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="10" Grid.ColumnSpan="2">
+                <TextBox x:Name="SearchTextBox" TextWrapping="Wrap" Text="Enter Supplier Name.."
+                         Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Margin="9,5,185,7" BorderThickness="0" Opacity="0.8"
+                         GotFocus="TextBox_OnFocusChanged" LostFocus="TextBox_OnFocusChanged"
+                         TextChanged="SearchTextBox_TextChanged"
+                         CaretBrush="{DynamicResource LightBorderBrush}"
+                         SelectionBrush="{DynamicResource LightBorderBrush}"
+                         FontSize="20" TabIndex="1" />
+            </Border>
+            <CheckBox x:Name="CheckBox" Content="View All" VerticalContentAlignment="Center"
+                      Foreground="White" Margin="10" Grid.Row="0" Grid.Column="1" Checked="CheckBox_OnCheckChanged" Unchecked="CheckBox_OnCheckChanged"/>
+        </Grid>
+        <Image x:Name="LogoImage" Source="/Presentation;component/Resources/Header.png" Grid.Row="0"
+               Opacity="0.8" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+               UseLayoutRounding="False" Stretch="UniformToFill" Margin="1.063,0,0,-1.137"
+               d:LayoutOverrides="HorizontalAlignment, VerticalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin"
+               Grid.Column="1" />
+        <Grid Grid.Column="0" Margin="-1,21.188,0,0.001" Grid.Row="5" Grid.ColumnSpan="2"
+              d:LayoutOverrides="VerticalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="30" Margin="84,41.8,0,0"
+                       TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="274.5" />
+        </Grid>
+        <Grid Margin="3,-2.971,0,-1.203" Background="{DynamicResource StatusBarBrush}" Grid.Row="4" Grid.ColumnSpan="2"
+              d:LayoutOverrides="VerticalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="29*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="81*" />
+                <ColumnDefinition Width="15*" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="526*" />
+                <ColumnDefinition Width="81*" />
+                <ColumnDefinition Width="210*" />
+            </Grid.ColumnDefinitions>
+            <Border Margin="0,3,1,0" Background="{DynamicResource HeaderBrush}"
+                    BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5"
+                    Grid.Column="3" Grid.RowSpan="2">
+                <Button x:Name="ReverseButton" Content="Reverse" BorderThickness="1"
+                        BorderBrush="{x:Null}" Background="{x:Null}"
+                        Foreground="White" Click="ReverseButton_Click" Margin="1,-1,-1,-1" TabIndex="2" />
+            </Border>
+            <Border Margin="0,3,2,0" Background="{DynamicResource HeaderBrush}"
+                    BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1" CornerRadius="5" Grid.Column="1" Grid.RowSpan="2">
+                <Button x:Name="NewButton" Content="New" BorderThickness="1"
+                        BorderBrush="{x:Null}" Background="{x:Null}"
+                        Foreground="White" Click="NewButton_Click" Margin="0,-1" TabIndex="3" />
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

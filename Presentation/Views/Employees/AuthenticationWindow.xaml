@@ -1,0 +1,99 @@
+﻿<Window x:Class="Presentation.Views.Employees.AuthenticationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.Views"
+        mc:Ignorable="d"
+        Title="Authenticate" Height="180" Width="420" ResizeMode="NoResize" Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True" FontSize="16">
+    <Border CornerRadius="5,5,10,10" BorderBrush="{DynamicResource LightBorderBrush}" BorderThickness="1">
+        <Border.Background>
+            <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg" Stretch="UniformToFill" />
+        </Border.Background>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" />
+                            <SkewTransform CenterY="0.5" CenterX="0.5" />
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#99535A85" Offset="0" />
+                    <GradientStop Color="#99535A85" Offset="1" />
+                    <GradientStop Color="#CC535A85" Offset="0.5" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Grid Grid.ColumnSpan="2" MouseLeftButtonDown="Grid_MouseLeftDown">
+                <Grid.Effect>
+                    <DropShadowEffect />
+                </Grid.Effect>
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" />
+                                <SkewTransform CenterY="0.5" CenterX="0.5" />
+                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#7F000000" Offset="0" />
+                        <GradientStop Color="#CC000000" Offset="1" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Label x:Name="AuthenticateLabel" Content="Authenticate" HorizontalAlignment="Left" Foreground="#CCFFFFFF"
+                       Width="250" Background="{x:Null}" />
+            </Grid>
+            <Grid Grid.Column="1" Margin="10,0" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="117*" />
+                    <ColumnDefinition Width="173*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="UsernameLabel" Content="Username:" Height="30" Margin="0,-1,11,1" Foreground="#CCFFFFFF" />
+                <Label x:Name="PasswordLabel" Content="Password:" Margin="0,1,10,1" Grid.Row="1" Foreground="#CCFFFFFF" />
+                <TextBox x:Name="UsernameTextBox" TextWrapping="Wrap" Margin="5,3" Background="#3F000000"
+                         Focusable="True" Text="username" GotFocus="UsernameBox_OnFocusChanged"
+                         LostFocus="UsernameBox_OnFocusChanged" Grid.Column="1" Foreground="#CCFFFFFF" />
+                <PasswordBox x:Name="PasswordBox" Margin="5,3" Password="password" Background="#3F000000"
+                             AllowDrop="False" LostFocus="PasswordBox_OnFocusChanged"
+                             GotFocus="PasswordBox_OnFocusChanged" Grid.Column="1" Grid.Row="1" Foreground="#CCFFFFFF" />
+            </Grid>
+            <Border Grid.Column="1" Margin="0,5,14,5" Grid.Row="3"
+                    HorizontalAlignment="Right" Width="73" Background="{DynamicResource HeaderBrush}" CornerRadius="5"
+                    BorderThickness="1" BorderBrush="{DynamicResource LightBorderBrush}">
+                <Button x:Name="AuthenticateButton" Content="OK" IsDefault="True"
+                        Click="AuthenticateButton_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#CCFFFFFF" />
+            </Border>
+            <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Right" IsCancel="True"
+                    Margin="5" Foreground="#7FFFFFFF" BorderThickness="0" Click="CloseButton_Click"
+                    Grid.Column="1" Width="25">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red" Offset="0" />
+                        <GradientStop Color="#FF640000" Offset="1" />
+                        <GradientStop Color="#3F640000" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

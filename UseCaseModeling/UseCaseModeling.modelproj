@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94aa2c27-5ca5-416a-b441-96a86badab72}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>UseCaseModeling</Name>
+    <RootNamespace>UseCaseModeling</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Activity Diagrams\Add Employee.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activity Diagrams\Add Employee.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activity Diagrams\Add Employee.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activity Diagrams\Pay Employee.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activity Diagrams\Pay Employee.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activity Diagrams\Pay Employee.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activity Diagrams\Record Defective Item.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activity Diagrams\Record Defective Item.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activity Diagrams\Record Defective Item.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activity Diagrams\Generate Invoice.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activity Diagrams\Generate Invoice.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activity Diagrams\Generate Invoice.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activity Diagrams\Generate Report.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activity Diagrams\Generate Report.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activity Diagrams\Generate Report.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activity Diagrams\Show Catalog.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activity Diagrams\Show Catalog.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activity Diagrams\Show Catalog.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence Diagrams\Generate Invoice.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagrams\Generate Invoice.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagrams\Generate Invoice.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence Diagrams\Show Catalog.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagrams\Show Catalog.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagrams\Show Catalog.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence Diagrams\Add Employee.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagrams\Add Employee.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagrams\Add Employee.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence Diagrams\Pay Employee.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagrams\Pay Employee.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagrams\Pay Employee.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence Diagrams\Record Defective Item.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagrams\Record Defective Item.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagrams\Record Defective Item.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UseCaseDiagram.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCaseDiagram.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UseCaseDiagram.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\UseCaseModeling.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Activity Diagrams" />
+    <Folder Include="Sequence Diagrams" />
+  </ItemGroup>
+</Project>

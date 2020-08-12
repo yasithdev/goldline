@@ -1,0 +1,347 @@
+﻿<Window x:Class="Presentation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:presentation="clr-namespace:Presentation"
+        mc:Ignorable="d"
+        Title="Home" Height="576" Width="1024"
+        WindowStartupLocation="CenterScreen" Visibility="Visible" MinWidth="1024"
+        MinHeight="576" SnapsToDevicePixels="True" WindowState="Maximized" FontSize="16" Closing="MainWindow_OnClosing">
+    <Window.Background>
+        <ImageBrush ImageSource="/Presentation;component/Resources/Background.jpg" Stretch="UniformToFill" />
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"
+                   Margin="0,0,2,0" Stroke="{DynamicResource HeaderBrush}" Fill="{DynamicResource HeaderBkgBrush}"
+                   RadiusX="5" RadiusY="5" />
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0" VerticalContentAlignment="Stretch"
+                   BorderThickness="0,1"
+                   BorderBrush="{DynamicResource HeaderBrush}" Background="{DynamicResource StatusBarBrush}"
+                   FontSize="16">
+            <Label x:Name="LogStatusLabel" Content="Logged on as:"
+                   Padding="0" Foreground="#BFFFFFFF" Background="{x:Null}" Width="140" FontWeight="Bold" FontSize="18" />
+            <Label x:Name="NameLabel" Content="Name of user" Padding="0" HorizontalContentAlignment="Stretch" MinWidth="250" Width="Auto" Foreground="#BFFFFFFF" FontWeight="Bold" FontSize="18" />
+        </StatusBar>
+        <Button x:Name="LogoutButton" Content="Logout" Grid.Column="2" Grid.Row="2" Click="LogoutButton_Click"
+                FontSize="16" Margin="5" IsCancel="True"/>
+        <Image x:Name="LogoImage" Source="/Presentation;component/Resources/Header.png" Grid.Row="0" Grid.Column="2"
+               Stretch="UniformToFill" Opacity="0.8" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+               UseLayoutRounding="False" />
+        <Label x:Name="TitleLabel" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" Content="Welcome"
+               VerticalContentAlignment="Center"
+               Margin="10" FontSize="48" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+               FontStretch="Condensed" FontFamily="Adobe Fan Heiti Std B" Foreground="#7FFFFFFF" />
+        <Grid Grid.ColumnSpan="2" Grid.Column="0" Margin="10,10,0,10" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="275*" />
+                <ColumnDefinition Width="275*" />
+                <ColumnDefinition Width="256*" />
+            </Grid.ColumnDefinitions>
+            <Expander x:Name="InventoryExpander" Header="Inventory" Margin="5,15,5,10" BorderBrush="#FF505781"
+                      Background="#99101534" UseLayoutRounding="False" IsExpanded="True" Foreground="White">
+                <Expander.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.8" />
+                </Expander.Effect>
+                <Grid Background="#3F6A7186">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="InventoryManagementButton" Content="_Inventory Management"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                    	Grid.Row="1" Padding="0" Click="InventoryManagementButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanManageInventory}" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="ShowCatalogButton" Content="Show _Catalog"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    	Grid.Row="2" Padding="0" Margin="2.5" Grid.Column="1" Click="ShowCatalogButton_OnClick">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Expander>
+            <Expander x:Name="OrdersAndReturnsExpander" Header="Orders and Returns" Margin="5,15,5,10" BorderBrush="#FF505781"
+                      Background="#99101534" UseLayoutRounding="False" IsExpanded="True" Grid.Row="0" Grid.Column="2"
+                      Foreground="White">
+                <Expander.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.8" />
+                </Expander.Effect>
+                <Grid Background="#3F6A7186">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PlaceOrderButton" Content="Place _Order"
+                		HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                		Grid.Row="1" Padding="0" Click="PlaceOrderButton_OnClick"
+                		IsEnabled="{x:Static presentation:UserPermissions.CanPlaceOrder}" Margin="2.5" >
+                        <Button.Background>
+                            <SolidColorBrush
+                				Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="ViewReturnedItemsButton" Content="View Returned Items"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    	Grid.Row="3" Padding="0" Click="ViewReturnedItemsButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanManageReturns}" Margin="2.5" Grid.Column="1">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="AddItemReturnsButton" Content="Add Item _Returns"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    	Grid.Row="4" Padding="0" Grid.Column="1" Click="AddItemReturnsButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanManageReturns}" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="ViewOrdersButton" Content="View Orders"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                    	Grid.Row="2" Padding="0" Click="ViewOrdersButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanPlaceOrder}" Margin="2.5" >
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Expander>
+            <Expander x:Name="EmployeesExpander" Header="Employees" Margin="5,15,5,10" BorderBrush="#FF505781"
+                      Background="#99101534" UseLayoutRounding="False" IsExpanded="True"
+                      Grid.Row="1" Grid.Column="1"
+                      Foreground="White">
+                <Expander.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.8" />
+                </Expander.Effect>
+                <Grid Background="#3F6A7186">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="EmployeeManagementButton" Content="_Employee Management"
+                		HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                		Grid.Row="1" Padding="0" Click="EmployeeManagementButton_Click" Margin="2.5"
+                        IsEnabled="{x:Static presentation:UserPermissions.CanManageEmployees}">
+                        <Button.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="EmployeePaymentsButton" Content="Employee Payments"
+                		HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                		Grid.Row="2" Padding="0" Click="EmployeePaymentsButton_OnClick" Margin="2.5"
+                        IsEnabled="{x:Static presentation:UserPermissions.CanManageReturns}">
+                        <Button.Background>
+                            <SolidColorBrush
+                				Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Expander>
+            <Expander x:Name="SuppliesExpander" Header="Supplies" Margin="5,15,5,10" BorderBrush="#FF505781"
+                      Background="#99101534" UseLayoutRounding="False" IsExpanded="True" Grid.Row="0" Grid.Column="1"
+                      Foreground="White">
+                <Expander.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.8" />
+                </Expander.Effect>
+                <Grid Background="#3F6A7186">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="SupplierManagementButton" Content="Supplier Management"
+                		HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                		Grid.Row="1" Padding="0" Click="SupplierManagementButton_OnClick"
+                		IsEnabled="{x:Static presentation:UserPermissions.CanManageSuppliers}" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                				Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="PlaceSupplyOrderButton" Content="Place _Supply Order"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                    	Grid.Row="2" Padding="0" Click="PlaceSupplyOrderButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanPlaceSupplyOrder}" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="ViewSupplyOrdersButton" Content="View Supply Orders"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                    	Grid.Row="3" Padding="0" Click="ViewSupplyOrdersButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanPlaceSupplyOrder}" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Expander>
+            <Expander x:Name="CreditCustomersExpander" Header="Credit Customers" Margin="5,15,5,10" BorderBrush="#FF505781"
+                      Background="#99101534" UseLayoutRounding="False" IsExpanded="True" Grid.Row="1" Grid.Column="0"
+                      Foreground="White">
+                <Expander.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.8" />
+                </Expander.Effect>
+                <Grid Background="#3F6A7186">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="ManageCustomersButton" Content="Manage Customers"
+                		HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                		Grid.Row="1" Padding="0" Click="ManageCustomersButton_OnClick"
+                		IsEnabled="{x:Static presentation:UserPermissions.CanManageCustomers}" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                				Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="SettleCreditBillButton" Content="Settle Credit _Bill"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    	Grid.Row="3" Padding="0" Click="SettleCreditBillButton_OnClick"
+                    	IsEnabled="{x:Static presentation:UserPermissions.CanSettleCreditBillsAndViewDetails}" Grid.Column="1" Margin="2.5">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="CreditPaymentDetailsButton" Content="Credit Payment Details"
+                    	HorizontalContentAlignment="Center" Click="CreditPaymentDetailsButton_OnClick"
+                    	VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" Padding="0" Margin="2.5"
+                        IsEnabled="{x:Static presentation:UserPermissions.CanSettleCreditBillsAndViewDetails}">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Expander>
+            <Expander x:Name="AdministrationExpander" Header="Administration" Margin="5,15,5,10"
+                      BorderBrush="#FF505781"
+                      Background="#99101534" UseLayoutRounding="False" IsExpanded="True" Grid.Column="2" Grid.Row="1"
+                      Foreground="White">
+                <Expander.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.8" />
+                </Expander.Effect>
+                <Grid Background="#3F6A7186">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="ActivityLogButton" Content="Activity Log"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"
+                    	Grid.Row="2" Padding="0" Margin="2.5" Click="ActivityLogButton_OnClick"
+                        IsEnabled="{x:Static presentation:UserPermissions.CanViewActivityLog}"
+                        Visibility="Collapsed">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="TransactionReportButton" Content="_Transaction Report"
+                    	HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    	Grid.Row="1" Grid.Column="1" Padding="0" Margin="2.5" Click="TransactionReportButton_OnClick"
+                        IsEnabled="{x:Static presentation:UserPermissions.CanGenerateTransactionReport}">
+                        <Button.Background>
+                            <SolidColorBrush
+                    			Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Expander>
+        </Grid>
+        <Grid Grid.Column="2" Margin="0" Grid.Row="1" Background="#7F000000">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="TimeLabel" Content="88 : 88 : 88" Margin="0" FontFamily="Segoe UI Black" FontSize="24"
+                   Height="42" Foreground="#CCFFFFFF" HorizontalContentAlignment="Center"
+                   Background="{DynamicResource SidebarBkgBrush}" VerticalAlignment="Top" />
+            <Separator Grid.Row="0" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="200"
+                       Background="{DynamicResource HeaderBkgBrush}" Foreground="{x:Null}" Height="1" />
+            <Button x:Name="ChangePasswordButton" Content="Change _Password" Grid.Row="1" Click="ChangePasswordButton_OnClick"
+            	FontSize="16" Margin="5" />
+        </Grid>
+    </Grid>
+</Window>

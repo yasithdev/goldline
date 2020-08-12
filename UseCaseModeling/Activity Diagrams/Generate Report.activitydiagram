@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="7e8e38f5-89c3-4108-8b94-3b1f07aa7576" name="Generate Report" linkedPackageId="b821d86b-655d-4027-99e6-e29b485b6f8e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="551718ad-ece8-439d-b647-c74b7cf817e2">
+      <elementDefinition Id="346098f8-8b5e-404f-9e53-5741a2586ab1" />
+      <body>Arrival of deadline?</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="b9a61cb1-066f-4e26-b076-94b7f9d6bc0a" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="a8fd909a-b89c-433e-85f0-ffa895f3c2f9">
+      <elementDefinition Id="2c105714-69ce-451a-822f-fd893ac60f9c" />
+      <body>System</body>
+      <annotatedElements>
+        <initialNodeMoniker Id="cf1dd6e4-68d9-4501-9048-5df9afb626e1" LastKnownName="Initial1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="c5c17a9f-173b-400b-8929-4a6deb630f32" name="Generate Report" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="8fa53b30-34e2-49ab-b5f4-500d6500fa86" />
+        <nodes>
+          <initialNode Id="cf1dd6e4-68d9-4501-9048-5df9afb626e1" name="Initial1" isLeaf="false">
+            <elementDefinition Id="39b4468f-9aec-4c0d-971d-8c69bfd9cf6a" />
+            <flowNodeTargets>
+              <controlFlow Id="b258f789-6548-417d-9204-7cec3de743fb" isLeaf="false">
+                <decisionNodeMoniker Id="b9a61cb1-066f-4e26-b076-94b7f9d6bc0a" LastKnownName="Decision1" />
+                <elementDefinition Id="8805a05d-c22e-45c9-91f3-b715aab719c0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode Id="b9a61cb1-066f-4e26-b076-94b7f9d6bc0a" name="Decision1" isLeaf="false">
+            <elementDefinition Id="4eac5370-e408-47ba-a748-dd4b61380326" />
+            <flowNodeTargets>
+              <controlFlow Id="72991555-7d5a-4ac4-9dcb-07583854aa2b" isLeaf="false">
+                <opaqueActionMoniker Id="7a86051c-a55e-4aa6-8aa5-85086367d521" LastKnownName="Generate Report" />
+                <elementDefinition Id="edfce19d-7a8a-4fa7-ac59-bbb08e99f213" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="7a86051c-a55e-4aa6-8aa5-85086367d521" name="Generate Report" isLeaf="false">
+            <elementDefinition Id="db0b28a6-848e-43b4-be88-2fb1f755ef19" />
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="b821d86b-655d-4027-99e6-e29b485b6f8e" name="UseCaseModeling">
+    <elementDefinition Id="b15daa4c-d792-40ef-b4a0-1754e21277fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="49f210fc-8543-4679-9929-c85f3b81cca1">
+        <profileInstance Id="4669524b-0f3d-4913-9e36-a0d29329fff6" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a83bfa1d-1182-44c4-98b1-b12a75a5c8f7">
+        <profileInstance Id="1221e28d-5917-4df8-acdc-08f86aac3030" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>
